@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfdfd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #E60E89;
+  --dark-background: #454456;
+  --light-color: #ebedf0;
+  --dark-color: #312b2b;
+}
+
+.drawer {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.drawer::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}

@@ -1,0 +1,67 @@
+.signUpContainer{
+    padding-top: 100px;
+   background-image: url(../assets/bg-7.jpg);
+   width: 100%;
+   height: 100vh;
+   background-size: cover;
+   /* Adjust image sizing to cover the slide */
+   background-position: center center;
+   /* Adjust image positioning */
+   background-repeat: no-repeat;
+   .linkDecoration{
+     text-decoration: none;
+     color: #DEB18A;
+   }
+   .linkDecoration:hover{
+     color: #454456;
+   }
+   .container {
+       max-width: 400px;
+       margin: 0 auto;
+       padding: 20px;
+      //  background-color: #f1f1f1;
+       border-radius: 4px;
+       box-shadow: 0 0 10px white;
+       @media only screen and (max-width: 1000px) {
+           width: 90%;
+   
+       }
+     
+       h2 {
+         text-align: center;
+         margin-bottom: 20px;
+         color: white;
+       }
+     
+       form {
+         display: flex;
+         flex-direction: column;
+     
+         label {
+           margin-bottom: 10px;
+           color: white;
+         }
+     
+         input {
+           padding: 10px;
+           margin-bottom: 20px;
+           border: 1px solid #ccc;
+           border-radius: 4px;
+         }
+     
+         button {
+           padding: 10px 20px;
+           background-color: #DEB18A;
+           color: #fff;
+           border: none;
+           border-radius: 4px;
+           cursor: pointer;
+           transition: background-color 0.3s;
+     
+           &:hover {
+             background-color: #454456;
+           }
+         }
+       }
+     }
+   }

@@ -1,0 +1,478 @@
+.sliderContainer {
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+
+    @media only screen and (max-width: 1000px) {
+        overflow: hidden;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+        overflow: hidden;
+
+
+    }
+
+    .backgroundImgContainer1 {
+        background-image: url(../assets/image-1.jpg);
+        width: 100%;
+        height: 90vh;
+        background-size: cover;
+        /* Adjust image sizing to cover the slide */
+        background-position: center center;
+        /* Adjust image positioning */
+        background-repeat: no-repeat;
+
+        @media only screen and (max-width: 1000px) {
+            width: 70%;
+            // margin-top: 30px;
+            height: 80vh;
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            // margin-top: 30px;
+            height: 60vh;
+
+        }
+
+        .intro {
+            margin-top: 150px;
+            margin-left: 40px;
+            color: #DEB18A;
+            font-size: 24px;
+
+            @media only screen and (max-width: 1000px) {
+
+                font-size: 20px;
+            }
+        }
+
+        .text {
+            color: white;
+            font-size: 80px;
+            margin-left: 40px;
+            text-transform: uppercase;
+
+            @media only screen and (max-width: 1000px) {
+                width: 70%;
+                font-size: 50px;
+            }
+
+            @media only screen and (max-width: 600px) {
+                width: 100%;
+                font-size: 30px;
+
+
+
+            }
+        }
+
+        .discoverMore {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            color: white;
+            border: 2px solid #DEB18A;
+            height: 62px;
+            width: 210px;
+            margin-left: 40px;
+
+        }
+
+        .discoverMore:hover {
+            background-color: #DEB18A;
+        }
+
+    }
+
+    .backgroundImgContainer2 {
+        background-image: url(../assets/image-3-1.jpg);
+        height: 90vh;
+        width: 100%;
+        background-size: cover;
+        /* Adjust image sizing to cover the slide */
+        background-position: center center;
+        /* Adjust image positioning */
+        background-repeat: no-repeat;
+
+        @media only screen and (max-width: 1000px) {
+            width: 70%;
+            // margin-top: 30px;
+            height: 80vh;
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            // margin-top: 30px;
+            height: 60vh;
+
+        }
+
+        .intro2 {
+            margin-top: 150px;
+            margin-left: 40px;
+            color: #DEB18A;
+            font-size: 24px;
+
+            @media only screen and (max-width: 1000px) {
+
+                font-size: 20px;
+            }
+        }
+
+        .text2 {
+            color: white;
+            font-size: 80px;
+            margin-left: 40px;
+            text-transform: uppercase;
+
+            @media only screen and (max-width: 1000px) {
+                width: 70%;
+                font-size: 50px;
+            }
+
+            @media only screen and (max-width: 600px) {
+                width: 100%;
+                font-size: 30px;
+            }
+        }
+
+    }
+
+    .discoverMore2 {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        color: white;
+        border: 2px solid #DEB18A;
+        height: 62px;
+        width: 210px;
+        margin-left: 40px;
+    }
+
+    .discoverMore2:hover {
+        background-color: #DEB18A;
+    }
+
+}
+
+
+
+
+@keyframes moving {
+    0% {
+        position: relative;
+        right: 500px;
+    }
+
+    100% {
+        right: 0px;
+    }
+}
+
+.checkOutServicesContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+    width: 100%;
+
+    @media only screen and (max-width: 1000px) {
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .picturesRow {
+        display: flex;
+        width: 50%;
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 20px;
+        }
+    }
+
+    .checkOutPicture1 {
+        // width: 290px;
+        width: 50%;
+        // height: 350px;
+        margin-left: 20px;
+    }
+
+    .checkOutPicture2 {
+        // width: 290px;
+        width: 50%;
+        // height: 350px;
+        margin-left: 20px;
+
+    }
+
+    .checkOutText {
+        margin-left: 40px;
+        margin-top: 90px;
+        width: 50%;
+
+        @media only screen and (max-width: 1000px) {
+            margin-left: 0px;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            margin-top: 0px;
+        }
+
+        .checkOutMainHeading {
+            color: #454456;
+
+        }
+
+        .checkOutHeading {
+            color: #454456;
+            font-size: 42px;
+        }
+
+        .checkOutDescription {
+            color: black;
+        }
+
+        .checkOutDescriptionPoints {
+            color: black;
+            font-size: 24px;
+        }
+
+
+    }
+
+
+}
+
+
+.wedCasualSuitContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #454456;
+    margin-top: 100px;
+
+    @media only screen and (max-width: 1000px) {
+        flex-direction: column;
+        overflow: hidden;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+
+    }
+
+    .wedCasualSuitImgContainer {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 50%;
+
+        @media only screen and (max-width: 1000px) {
+
+            overflow: hidden;
+            width: 100%;
+        }
+    }
+
+    .wedCasualImg {
+
+        height: 343px;
+
+    }
+
+    .wedCasualSuitTextContainer {
+        width: 50%;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            text-align: center;
+
+        }
+    }
+
+    .wedCasualSuitChkOut {
+        color: white;
+    }
+
+    .chkOutHeading {
+        color: white;
+        font-size: 42px;
+
+    }
+
+    .wedCasualSuitChkOutDescription {
+        color: white;
+
+    }
+
+    .wedCasualDiscoverMore {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        color: white;
+        border: 2px solid #DEB18A;
+        height: 62px;
+        width: 210px;
+
+        // margin-left: 40px;
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            text-align: center;
+
+        }
+    }
+
+    .wedCasualDiscoverMore:hover {
+        background-color: #DEB18A;
+    }
+}
+
+.categoryContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #454456;
+    justify-content: space-around;
+    overflow: hidden;
+    padding-top: 80px;
+
+    @media only screen and (max-width: 1000px) {
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .categoryBox1,
+    .categoryBox2,
+    .categoryBox3,
+    .categoryBox4 {
+        height: 250px;
+        width: 20%;
+        color: white;
+        text-align: center;
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    .firstCategoryImg,
+    .secondCategoryImg,
+    .thirdCategoryImg,
+    .fourthCategoryImg {
+        height: 70px;
+        width: 70px;
+    }
+}
+
+.galleryImageContainer {
+    // width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    // padding-top: 30px;
+    @media only screen and (max-width: 1000px) {
+        width: 100%;
+        flex-direction: column;
+
+    }
+}
+
+.latestBlogsContainer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .latestBlogsHeading {
+        color: #454456;
+        text-align: center;
+    }
+
+    .latestBlogsTitle {
+        color: #454456;
+        text-align: center;
+        font-size: 42px;
+    }
+
+    .latestBlogsCardContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+
+    .latestBlogsCard {
+        width: 30%;
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+
+        }
+
+    }
+
+    .blogImage {
+        width: 30%;
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+
+        }
+    }
+
+    .latestBlogsCardTitle {
+        color: #454456;
+        text-align: center;
+        font-size: 28px;
+
+        @media only screen and (max-width: 600px) {
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 22px;
+        }
+    }
+
+    .latestBlogsCardDescription {
+        color: #454456;
+        text-align: center;
+        font-size: 18px;
+
+        @media only screen and (max-width: 600px) {
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 15px;
+        }
+    }
+
+    .latestBlogsCardReadMoreBtn {
+        color: #454456;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .latestBlogsCardReadMoreBtn:hover {
+        color: #DEB18A;
+    }
+}

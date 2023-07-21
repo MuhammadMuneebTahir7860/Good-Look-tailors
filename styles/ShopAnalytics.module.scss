@@ -1,0 +1,95 @@
+
+.shopStat {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+    @media only screen and (max-width: 1000px) {
+        flex-direction: column;
+    }
+
+    .shopStatBox1 {
+        background-image: url(../assets//image-6.jpg);
+        height: 220px;
+        width: 22%;
+        background-size: cover;
+        /* Adjust image sizing to cover the slide */
+        background-position: center center;
+        /* Adjust image positioning */
+        background-repeat: no-repeat;
+        text-align: center;
+
+        @media only screen and (max-width: 1000px) {
+
+            width: 93%;
+        }
+
+    }
+
+    .shopStatBox2 {
+        background-color: #DEB18A;
+        height: 220px;
+        width: 22%;
+        color: white;
+
+        @media only screen and (max-width: 1000px) {
+
+            width: 93%;
+        }
+    }
+
+    .shopStatBox3 {
+        background-image: url(../assets/image-7.jpg);
+        height: 220px;
+        width: 22%;
+        background-size: cover;
+        /* Adjust image sizing to cover the slide */
+        background-position: center center;
+        /* Adjust image positioning */
+        background-repeat: no-repeat;
+        text-align: center;
+
+        @media only screen and (max-width: 1000px) {
+
+            width: 93%;
+        }
+    }
+
+    .shopStatBox4 {
+        background-color: #DEB18A;
+        height: 220px;
+        width: 22%;
+        color: white;
+
+        @media only screen and (max-width: 1000px) {
+
+            width: 93%;
+        }
+
+    }
+
+    .shopStatBoxDescription1 {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+    }
+
+    .shopStatBoxDescription2 {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+    }
+
+    .shopStatBoximage {
+        margin-top: 30px;
+        height: 70px;
+        width: 70px;
+
+    }
+}

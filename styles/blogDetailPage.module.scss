@@ -1,0 +1,57 @@
+.bannerSize {
+    @media only screen and (max-width: 1000px) {
+        font-size: 20px;
+    }
+}
+
+.blogDetailPageMainContainer {
+    display: flex;
+    width: 100%;
+    padding-top: 100px;
+
+    @media only screen and (max-width: 1000px) {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .blogDetailPageLeftSection {
+        width: 65%;
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+        }
+    }
+
+    .blogDetailPageRighttSection {
+        width: 30%;
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+        }
+    }
+
+    .socialIconsContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+
+        @media only screen and (max-width: 1000px) {
+            justify-content: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+    }
+
+    .socialIcons {
+        color: #454456;
+        margin-right: 20px;
+    }
+    .socialIcons:hover{
+        transform: scale(1.5);
+        transition: 1s;
+    }
+}
+.footer{
+    padding-top: 200px;
+}

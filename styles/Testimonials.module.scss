@@ -1,0 +1,58 @@
+
+.testimonialsContainer {
+    background-image: url(../assets/bg-1.jpg);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    .testimonialsTextContainer {
+        color: white;
+        text-align: center;
+        padding-top: 130px;
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+            overflow: hidden;
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            font-size: 14px;
+            overflow: hidden;
+        }
+    }
+
+    .testimonialsSliderContainer {
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            overflow: hidden;
+
+        }
+    }
+
+    .testimonialsFeedBack {
+        color: white;
+        font-size: 22px;
+        text-align: center;
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            font-size: 16px;
+        }
+    }
+
+    .testimonialsFeedBackUser {
+        color: #454456;
+    }
+}
+

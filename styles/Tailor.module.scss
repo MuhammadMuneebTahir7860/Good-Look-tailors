@@ -1,0 +1,56 @@
+
+.ourTailorMainContainer {
+    padding-top: 100px;
+    text-align: center;
+
+    .ourTailorHeading {
+        color: #454456;
+    }
+
+    .ourTailorMeetTailor {
+        color: #454456;
+        font-size: 24px;
+
+        @media only screen and (max-width: 600px) {
+            font-size: 16px;
+        }
+    }
+
+    .ourTailorImgSection {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 30px;
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+            flex-direction: column;
+
+        }
+    }
+
+    .ourTailorImgContainer {
+        width: 30%;
+
+        @media only screen and (max-width: 1000px) {
+            width: 98%;
+
+        }
+    }
+
+    .ourTailorImage {
+        width: 30%;
+    }
+
+
+
+    .ourTailorSocialIcons {
+        margin-left: 5px;
+    }
+
+    .ourTailorSocialIcons:hover {
+        transform: scale(1.5);
+        transition: 1s;
+    }
+}

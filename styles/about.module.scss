@@ -1,0 +1,129 @@
+
+.aboutDetailsContainer {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 100px;
+padding-bottom: 100px;
+    @media only screen and (max-width: 1000px) {
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .aboutLeftSection {
+        width: 50%;
+        padding-top: 70px;
+
+        @media only screen and (max-width: 1000px) {
+        padding-top: 0px;
+        width: 100%;
+        overflow: hidden;
+
+        }
+    }
+
+    .aboutHeading {
+        color: #454456;
+    }
+
+    .aboutTitle {
+        font-size: 48px;
+        color: #454456;
+
+        @media only screen and (max-width: 1000px) {
+            font-size: 28px;
+        }
+    }
+
+    .aboutDescription {
+        color: #454456;
+        font-size: 22px;
+
+        @media only screen and (max-width: 1000px) {
+            font-size: 18px;
+        }
+    }
+
+    .aboutCall {
+        color: #454456;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .aboutNumber {
+        color: #454456;
+        font-size: 26px;
+    }
+
+    .aboutRightSection {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+        }
+    }
+
+    .aboutDetailImg {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 97%;
+
+        @media only screen and (max-width: 1000px) {
+            object-fit: cover;
+        }
+    }
+
+    .aboutCustomLine {
+        background-color: #DEB18A;
+        width: 4px;
+    }
+}
+.aboutVideoContainer{
+    background-image: url(../assets/bg-3.jpg);
+    width: 100%;
+    height: 70vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    @media only screen and (max-width: 1000px) {
+        overflow: hidden;
+        }
+    .aboutVideoIconContainer{
+        color: white;
+        clip-path: circle();
+        height: 100px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #DEB18A;
+        
+    }
+    .aboutVideoText{
+        color: white;
+        font-size: 56px;
+        padding-left: 120px;
+        padding-right: 120px;
+        margin-top: 20px;
+        @media only screen and (max-width: 1000px) {
+        font-size: 32px;
+        padding-left: 0px;
+        padding-right: 0px;
+        }
+    }
+}
+.aboutFooter{
+    padding-top: 100px;
+}

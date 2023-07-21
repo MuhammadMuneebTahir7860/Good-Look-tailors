@@ -1,0 +1,32 @@
+.blogPageRecentPost{
+    width: 100%;
+    @media only screen and (max-width: 1000px) {
+        width: 100%;
+    }
+    .recentFooterPost{
+        padding-left: 40px;
+        @media only screen and (max-width: 1000px) {
+            text-align: center;
+            padding-left: 0px;
+        }
+    }
+    .footerRecentPost:hover{
+        color: #DEB18A;
+    }
+    .footerRecentPost {
+        display: flex;
+        flex-direction: row;
+        @media only screen and (max-width: 1000px) {
+            text-align: center;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           overflow: hidden;
+        }
+    }
+
+    .footerImg {
+        height: 60px;
+        width: 60px;
+    }
+}
