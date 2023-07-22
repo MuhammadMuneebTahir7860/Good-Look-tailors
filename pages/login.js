@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styles from '@/styles/login.module.scss'
+import Link from 'next/link';
 export default function login() {
-    
-    
+
+
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -12,16 +13,16 @@ export default function login() {
         // Perform sign-up logic here (e.g., API call to register user)
 
         // Reset form fields
-        
+
         setEmail('');
         setPassword('');
     };
-  return (
-    <div  className={styles.signUpContainer}>
+    return (
+        <div className={styles.signUpContainer}>
             <div className={styles.container}>
                 <h2>Login</h2>
                 <form onSubmit={handleSignUp}>
-                    
+
 
                     <label htmlFor="email">Email:</label>
                     <input
@@ -44,9 +45,14 @@ export default function login() {
                     />
 
                     <button type="submit">Login</button>
-                    <p>If you don't have account <a className={styles.linkDecoration} href='#'>Sign Up</a> </p>
+                    <p>If you don't have account
+                        
+                           <Link className={styles.heading} href="/signUp">Sign Up</Link>
+                        
+                    </p>
+
                 </form>
             </div>
-            </div> 
-  )
+        </div>
+    )
 }

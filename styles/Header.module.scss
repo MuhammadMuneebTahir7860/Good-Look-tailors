@@ -168,7 +168,10 @@
     background-color: var(--dark-background);
     padding-top: 20px;
     padding-bottom: 20px;
-
+    .heading{
+        
+        text-decoration: none;
+    }
     .closeIcon {
         color: white !important;
         margin-left: 210px;

@@ -5,6 +5,7 @@ import "animate.css/animate.min.css";
 import Fade from 'react-reveal/Fade';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from 'next/link';
 import Slider from "react-slick";
 import stich3 from "../../assets/image-3.jpg";
 import stich4 from "../../assets/image-4.jpg";
@@ -12,18 +13,18 @@ import stich5 from "../../assets/image-5.jpg";
 import stich6 from "../../assets/image-9.png";
 import useWindowDimensions from '@/customHook/UseWindowDimensions';
 export default function Services() {
-    const windowDimensions = useWindowDimensions();
-    var settings2 = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: windowDimensions.width > 1000 ? 3 : 1,
-        slidesToScroll: 1,
-        autoplay: true,
-      };
+  const windowDimensions = useWindowDimensions();
+  var settings2 = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: windowDimensions.width > 1000 ? 3 : 1,
+    slidesToScroll: 1,
+    autoplay: true,
+  };
   return (
     <div>
-        {/* services we offer */}
+      {/* services we offer */}
 
       <div className={styles.servicesWeOffer}>
         <Fade top>
@@ -35,40 +36,45 @@ export default function Services() {
         <div className={styles.servicesWeOfferSlider}>
           <Slider {...settings2}>
             <div >
-              <div className={styles.sliderImgContainer}>
-                <div className={styles.sliderImgMainContainer}>
+              <Link className={styles.heading} href="/ourServices">
+                <div className={styles.sliderImgContainer}>
+                  <div className={styles.sliderImgMainContainer}>
 
-                  <div className={styles.sliderImg1}>
-                    <Image style={{ width: '100%', objectFit: 'contain', clipPath: "circle()" }} src={stich3} alt='stich3'></Image>
+                    <div className={styles.sliderImg1}>
+                      <Image style={{ width: '100%', objectFit: 'contain', clipPath: "circle()" }} src={stich3} alt='stich3'></Image>
+                    </div>
+
+                    <div style={{ color: '#454456' }}>
+                      <h1>Suit & Shirt</h1>
+                      <p>Experience impeccable style with our tailored suits.
+                      </p>
+                    </div>
+
                   </div>
-
-                  <div style={{ color: '#454456' }}>
-                    <h1>Suit & Shirt</h1>
-                    <p>Experience impeccable style with our tailored suits.
-                    </p>
-                  </div>
-
                 </div>
-              </div>
+              </Link>
             </div>
             <div>
-              <div className={styles.sliderImgContainer}>
-                <div className={styles.sliderImgMainContainer}>
+              <Link className={styles.heading} href="/ourServices">
+                <div className={styles.sliderImgContainer}>
+                  <div className={styles.sliderImgMainContainer}>
 
-                  <div className={styles.sliderImg1}>
-                    <Image style={{ width: '100%', objectFit: 'contain', clipPath: "circle()" }} src={stich4} alt='stich3'></Image>
-                  </div>
-                  <div style={{ color: '#454456' }}>
-                    <h1>Wedding Dresses</h1>
-                    <p>Celebrate love in style with our handcrafted
-                      wedding dresses,
-                      .</p>
-                  </div>
+                    <div className={styles.sliderImg1}>
+                      <Image style={{ width: '100%', objectFit: 'contain', clipPath: "circle()" }} src={stich4} alt='stich3'></Image>
+                    </div>
+                    <div style={{ color: '#454456' }}>
+                      <h1>Wedding Dresses</h1>
+                      <p>Celebrate love in style with our handcrafted
+                        wedding dresses,
+                        .</p>
+                    </div>
 
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div>
+            <Link className={styles.heading} href="/ourServices">
               <div className={styles.sliderImgContainer}>
                 <div className={styles.sliderImgMainContainer}>
 
@@ -84,8 +90,10 @@ export default function Services() {
 
                 </div>
               </div>
+              </Link>
             </div>
             <div>
+            <Link className={styles.heading} href="/ourServices">
               <div className={styles.sliderImgContainer}>
                 <div className={styles.sliderImgMainContainer}>
 
@@ -100,6 +108,7 @@ export default function Services() {
 
                 </div>
               </div>
+              </Link>
             </div>
 
 

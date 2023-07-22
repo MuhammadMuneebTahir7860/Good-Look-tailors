@@ -8,6 +8,7 @@ import { MdClose } from 'react-icons/md';
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 
+import Link from 'next/link';
 export default function Header() {
     const [isOpen, setIsOpen] = React.useState(false)
     const toggleDrawer = () => {
@@ -35,22 +36,22 @@ export default function Header() {
                 <div className={styles.drawerContainer}>
                     <MdClose onClick={toggleDrawer} size={30} className={styles.closeIcon} />
                     <div className={styles.divider} />
-                    <p className={styles.drawerNavLink}>Home</p>
+                    <Link  className={styles.heading} href="/"><p className={styles.drawerNavLink}>Home</p></Link>
                     <div className={styles.divider} />
-                    <p className={styles.drawerNavLink}>About </p>
+                    <Link className={styles.heading} href="/about"> <p className={styles.drawerNavLink}>About </p></Link>
                     <div className={styles.divider} />
-                    <p className={styles.drawerNavLink}>Services </p>
+                    <Link className={styles.heading} href="/ourServices"> <p className={styles.drawerNavLink}>Services </p></Link>
                     <div className={styles.divider} />
-                    <p className={styles.drawerNavLink}>Blog </p>
+                    <Link className={styles.heading} href="/blog"> <p className={styles.drawerNavLink}>Blog </p></Link>
 
                     <div className={styles.divider} />
-                    <p className={styles.drawerNavLink}> Book An Apoinment</p>
+                    <Link className={styles.heading} href="/bookAnAppointment"><p className={styles.drawerNavLink}> Book An Apoinment</p></Link>
                     <div className={styles.divider} />
-                    <p className={styles.drawerNavLink}>My Measurement</p>
+                    <Link className={styles.heading} href="/myMeasurement"><p className={styles.drawerNavLink}>My Measurement</p></Link>
                     <div className={styles.divider} />
-                    <p className={styles.drawerNavLink}>Login / Sign Up</p>
+                    <Link className={styles.heading} href="/login"><p className={styles.drawerNavLink}>Login / Sign Up</p></Link>
                     <div className={styles.divider} />
-                    <p className={styles.drawerNavLink}>Join Us </p>
+                    <Link className={styles.heading} href="/joinUs"><p className={styles.drawerNavLink}>Join Us </p> </Link>
                     <div className={styles.divider} />
                     <FaFacebook color='white' className={styles.drawerSocialIcon} size={25} />
                     <FaInstagram color='white' className={styles.drawerSocialIcon} size={25} />

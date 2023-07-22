@@ -30,10 +30,11 @@ import stich20 from "../../assets/image-26.jpg";
 import stich24 from "../../assets/news-1-292x229.jpg";
 import stich25 from "../../assets/news-2-292x229.jpg";
 import stich26 from "../../assets/news-3-292x229.jpg";
+import Link from 'next/link';
 
 
 export default function Home() {
-  
+
   var settings = {
     dots: true,
     infinite: true,
@@ -44,7 +45,7 @@ export default function Home() {
 
   };
 
-  
+
   return (
     <div>
 
@@ -60,7 +61,9 @@ export default function Home() {
               <h1 className={styles.text}>Our Personal Quality Tailors</h1>
             </Fade>
             <Fade bottom>
-              <div className={styles.discoverMore}><span>DISCOVER MORE</span></div>
+              <Link className={styles.heading} href="/ourServices">
+                <div className={styles.discoverMore}><span>DISCOVER MORE</span></div>
+              </Link>
             </Fade>
           </div>
 
@@ -72,7 +75,9 @@ export default function Home() {
               <h1 className={styles.text2}>Create your own personal style</h1>
             </Fade>
             <Fade bottom>
-              <div className={styles.discoverMore2}><span>DISCOVER MORE</span></div>
+              <Link className={styles.heading} href="/ourServices">
+                <div className={styles.discoverMore2}><span>DISCOVER MORE</span></div>
+              </Link>
             </Fade>
           </div>
 
@@ -121,7 +126,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Services/>
+      <Services />
       <ShopAnalytics />
 
       {/* wedding or casual suit dresses  */}
@@ -148,9 +153,11 @@ export default function Home() {
             </p>
           </Fade>
           <Fade bottom>
-            <div className={styles.wedCasualDiscoverMore}>
-              <span>DISCOVER MORE</span>
-            </div>
+            <Link className={styles.heading} href="/ourServices">
+              <div className={styles.wedCasualDiscoverMore}>
+                <span>DISCOVER MORE</span>
+              </div>
+            </Link>
           </Fade>
 
         </div>
@@ -212,12 +219,13 @@ export default function Home() {
           </Fade>
         </div>
       </div>
+      <div id='testimonialsSection'>
       <Testimonials />
-
+      </div>
       {/* Gallery */}
 
 
-      <div className={styles.galleryImageContainer}>
+      <div id='gallerSection' className={styles.galleryImageContainer}>
         <Image className={styles.galleryImage} style={{ width: "100%", }} src={stich17} alt='stich17'></Image>
         <Image className={styles.galleryImage} style={{ width: "100%", }} src={stich18} alt='stich18'></Image>
       </div>
@@ -227,9 +235,9 @@ export default function Home() {
         <Image className={styles.galleryImage} style={{ width: "100%" }} src={stich20} alt='stich20'></Image>
       </div>
 
-      <Tailors/>
+      <Tailors />
 
-     <Contact/>
+      <Contact />
       {/* latest Blogs */}
 
       <div className={styles.latestBlogsContainer}>
@@ -264,9 +272,11 @@ export default function Home() {
                   to come, we provide expert guidance on how
                   to care for your precious wedding gown.
                 </p>
-                <p className={styles.latestBlogsCardReadMoreBtn}>
-                  Read More
-                </p>
+                <Link className={styles.heading} href="/blogDetailPage">
+                  <p className={styles.latestBlogsCardReadMoreBtn}>
+                    Read More
+                  </p>
+                </Link>
               </div>
 
 
@@ -285,9 +295,11 @@ export default function Home() {
                   offer valuable tips on how to properly
                   care for this exquisite garment.
                 </p>
-                <p className={styles.latestBlogsCardReadMoreBtn}>
-                  Read More
-                </p>
+                <Link className={styles.heading} href="/blogDetailPage">
+                  <p className={styles.latestBlogsCardReadMoreBtn}>
+                    Read More
+                  </p>
+                </Link>
               </div>
 
 
@@ -307,9 +319,11 @@ export default function Home() {
                   creating garments that fit you like a second
                   skin.
                 </p>
-                <p className={styles.latestBlogsCardReadMoreBtn}>
-                  Read More
-                </p>
+                <Link className={styles.heading} href="/blogDetailPage">
+                  <p className={styles.latestBlogsCardReadMoreBtn}>
+                    Read More
+                  </p>
+                </Link>
               </div>
 
 

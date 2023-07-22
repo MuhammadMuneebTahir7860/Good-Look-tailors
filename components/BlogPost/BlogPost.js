@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../styles/BlogPost.module.scss'
 import Image from 'next/image'
+import Link from 'next/link';
 export default function BlogPost({ blogPageTitle, blogPageDescription,blogPageDescription2, blogPageImg, showBtn }) {
     return (
         <div>
@@ -10,7 +11,7 @@ export default function BlogPost({ blogPageTitle, blogPageDescription,blogPageDe
                 <p className={styles.blogPostDescription}> {blogPageDescription}</p>
                 <p className={styles.blogPostDescription}> {blogPageDescription2}</p>
                 {showBtn &&
-                    <div className={styles.blogPostReadMoreBtnContainer}><p className={styles.blogPostReadMoreBtn}>Read More</p></div>
+                  <Link  className={styles.heading} href="/blogDetailPage">  <div className={styles.blogPostReadMoreBtnContainer}><p className={styles.blogPostReadMoreBtn}>Read More</p></div></Link>
                 }
             </div>
         </div>

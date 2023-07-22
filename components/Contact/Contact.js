@@ -3,6 +3,7 @@ import styles from '../../styles/Contact.module.scss'
 import "animate.css/animate.min.css";
 import Fade from 'react-reveal/Fade';
 import { TbPhoneCalling } from 'react-icons/tb'
+import Link from 'next/link';
 export default function Contact() {
   return (
     <div>
@@ -32,11 +33,13 @@ export default function Contact() {
               of our customers have a great experience
             </Fade>
           </div>
+          <Link className={styles.heading} href="/contactPage">
           <div className={styles.contactUsDiscoverMore}>
             <Fade bottom>
               <span>DISCOVER MORE</span>
             </Fade>
           </div>
+          </Link>
         </div>
       </div>
     </div>

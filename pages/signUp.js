@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styles from '@/styles/signUp.module.scss'
 export default function signUp() {
 
@@ -55,7 +56,9 @@ export default function signUp() {
                     />
 
                     <button type="submit">Sign Up</button>
-                    <p>If you have already account <a className={styles.linkDecoration} href='#'>Login</a> </p>
+                    <p>If you have already account 
+                    <Link className={styles.heading} href="/login">Login</Link> 
+                    </p>
                 </form>
             </div>
             </div> 
