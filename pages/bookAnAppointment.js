@@ -43,6 +43,7 @@ export default function bookAnAppointment() {
                         />
                         <label htmlFor="email">Email:</label>
                         <input
+
                             style={{ height: "40px" }}
                             type="email"
                             id="email"
@@ -55,6 +56,8 @@ export default function bookAnAppointment() {
                             Date:
                         </label>
                         <input
+                        
+                        className={styles.bookAnAppointmentDateInput}
                             style={{ height: "40px" }}
                             type="date"
                             value={date}
@@ -66,6 +69,7 @@ export default function bookAnAppointment() {
                             Time:
                         </label>
                         <input
+                        className={styles.bookAnAppointmentTimeInput}
                             style={{ height: "40px" }}
                             type="time"
                             value={time}
