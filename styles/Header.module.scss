@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 30px;
-    background-color: #fdfdfdfd;
+    background-color: #454456;
 
     @media only screen and (max-width: 1000px) {
         box-shadow: -13px 14px 400px -24px rgba(0,0,0,0.75);
@@ -59,11 +59,7 @@
         width: 145px;
         height: 50px;
 
-        @media only screen and (max-width: 1000px) {
-            width: 105px;
-            height: 30px;
-            margin-left: 0px;
-        }
+        
     }
 
     .btnAndNumberRow {

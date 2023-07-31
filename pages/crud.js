@@ -1,145 +1,108 @@
-import React, { useState } from 'react';
-
-
-
-// export default function crud() {
-//     const [todos, setTodos] = useState([{ name: "umair", class: "Bs", rollNo: "531" }])
-//     const [newTodos, setNewTodos] = useState('')
-//     const [newClass, setNewClass] = useState('')
-//     const [newRollNo, setNewRollNo] = useState('')
-//     const [flag, setFlag] = useState('')
-//     const [ind, setInd] = useState('');
-//     function addHandler(params) {
-//         if (newTodos && newClass && newRollNo !== "") {
-//             const data = {
-//                 name: newTodos,
-//                 class: newClass,
-//                 rollNo: newRollNo
-//             }
-//             setTodos([...todos, data])
-//             setNewTodos('')
-//             setNewClass('')
-//             setNewRollNo('')
-//         }
-
-
-//     }
-//     function deleteHandler(index) {
-//         const newArray = todos.filter((item, i) => {
-//             if (index != i) {
-//                 return item
-//             }
-//         })
-//         setTodos(newArray)
-//     }
-
-//     function editHandler(item, index) {
-//         setInd(index);
-//         setNewTodos(item.name)
-//         setNewClass(item.class)
-//         setNewRollNo(item.rollNo)
-//         setFlag(true)
-//     }
-
-//     function updateHandler() {
-//         if (newTodos && newClass && newRollNo !== "") {
-//             const data = {
-//                 name: newTodos,
-//                 class: newClass,
-//                 rollNo: newRollNo
-//             }
-//             const newArray = todos.map((item, i) => {
-//                 if (i == ind) {
-//                     return data;
-//                 }
-//                 else {
-//                     return item
-//                 }
-//             })
-//             setTodos(newArray);
-//             setFlag(false);
-//             setNewTodos('')
-//             setNewClass('')
-//             setNewRollNo('')
-//         }
-//     }
-
-//     return (
-//         <div>
-//             <input
-//                 placeholder='Enter name'
-//                 value={newTodos}
-//                 onChange={(e) => setNewTodos(e.target.value)}
-//             />
-//             <input
-//                 placeholder='Enter Class'
-//                 value={newClass}
-//                 onChange={(e) => setNewClass(e.target.value)}
-//             />
-//             <input
-//                 placeholder='Enter Roll No'
-//                 value={newRollNo}
-//                 onChange={(e) => setNewRollNo(e.target.value)}
-//             />
-//             {
-//                 flag ?
-//                     <button onClick={updateHandler}>Update Task</button>
-//                     :
-//                     <button onClick={addHandler}>Add Task</button>
-//             }
-//             {
-//                 todos.map((item, index) => {
-//                     return (
-//                         <div>
-//                             <p>{index + 1} : {item.name}</p>
-//                             <p>{index + 1} : {item.class}</p>
-//                             <p>{index + 1} : {item.rollNo}</p>
-//                             <button onClick={() => deleteHandler(index)}>Delete</button>
-//                             <button onClick={() => editHandler(item, index)}>Edit</button>
-//                         </div>
-//                     )
-//                 })
-//             }
-//         </div>
-//     )
-// }
-
-
-
-export default function crud() {
-    const [todos, setTodos] = useState([{ name: 'umair', class: 'bs', rollNo: '531' }])
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { doAdd, doDelete, doUpdate, doGet } from '../Redux/slices/counterSlice';
+export default function CounterComponent() {
+    const crud = useSelector((state) => state.crud.todos);
+    console.log(crud);
+    const dispatch = useDispatch();
     const [newName, setNewName] = useState('')
     const [newClass, setNewClass] = useState('')
-    const [newRollNo, setNewRollNo] = useState('')
+    const [newSemester, setNewSemester] = useState('')
+    const [id, setId] = useState('')
     const [flag, setFlag] = useState('')
-    const [ind, setInd] = useState('')
-    function editHandler(item, index) {
-        setInd(index),
-            setNewName(item.name)
-        setNewClass(item.class)
-        setNewRollNo(item.rollNo)
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('')
+    // function addHandler(params) {
+    //     if (title && description) {
+    //         const data = {
+    //             title,
+    //             description,
+    //         }
+    //         dispatch(doAdd({ data }))
+    //         setTitle('')
+    //         setDescription('')
+
+    //     }
+    // }
+
+    function editHandler(item) {
+        setId(item?._id)
         setFlag(true)
+        setTitle(item.title)
+        setDescription(item.description)
     }
-    function updateHandler() {
-        if (newName && newClass && newRollNo != '') {
+
+    function updateHandler(params) {
+        if (title && description != '') {
             const data = {
-                name: newName,
-                class: newClass,
-                rollNo: newRollNo
+                title,
+                description,
+                _id:id,
             }
-            const newArray=todos.map((item,i)=>{
-if (ind==i) {
-    re
-}
-            })
-            setTodos([...todos,newName])
-            setFlag(false),
-            setNewName('')
-            setNewClass('')
-            setNewRollNo('')
+            dispatch(doUpdate({ data}))
+            setTitle('')
+            setDescription('')
+            setFlag(false)
+
+
         }
     }
+
+    function addHandler(params) {
+        if (title&&description!='') {
+           const data={
+            title,
+            description,
+           }
+           dispatch(doAdd({data}));
+           setTitle('')
+           setDescription('')
+        }
+    }
+    useEffect(() => {
+        dispatch(doGet())
+    }, [])
     return (
-        <div></div>
+        <div>
+            <input
+                placeholder='Enter title'
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+            />
+
+            <input
+                placeholder='Enter description'
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                required
+            />
+
+            <input
+                placeholder='Enter semester'
+                value={newSemester}
+                onChange={(e) => setNewSemester(e.target.value)}
+                required
+            />
+
+            {
+                flag ? <button onClick={() => updateHandler()}>Update</button> :
+                    <button onClick={() => addHandler()}>Add</button>
+
+            }
+            {
+                crud?.map((item, index) => {
+                    return <div key={index}>
+                        <p>{index + 1}:{item?.title}</p>
+                        <p>{index + 1}:{item?.description}</p>
+                        {/* <p>{index + 1}:{item.semester}</p> */}
+                        <button onClick={() => dispatch(doDelete({ _id:item?._id }))}>Delete</button>
+                        <button onClick={() => editHandler(item)}>Edit</button>
+                    </div>
+
+                })
+            }
+
+        </div>
     )
 }

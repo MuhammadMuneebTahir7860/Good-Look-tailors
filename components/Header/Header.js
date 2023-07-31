@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../styles/Header.module.scss';
-import logo from '../../assets/revyfy-logo-pink.png';
+import logo from '../../assets/revyfy-logo-pink1.png';
 import Image from 'next/image';
 import { FaFacebook, FaInstagram, FaBars } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
@@ -18,11 +18,13 @@ export default function Header() {
         <div className={styles.fixedHeaderContainer}>
             <div className={styles.headerContainer}>
                 <div className={styles.logo} >
-                    <Image className={styles.logo} src={logo} alt="logo" />
+                <Link  className={styles.heading} href="/">
+                    <Image  src={logo} alt="logo" />
+                    </Link>
                 </div>
 
                 <div onClick={toggleDrawer} className={styles.barIconContainer}>
-                    <FaBars size={25} />
+                    <FaBars size={25} color='white' />
                 </div>
 
             </div>
