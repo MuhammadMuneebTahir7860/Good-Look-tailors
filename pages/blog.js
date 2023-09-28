@@ -8,34 +8,44 @@ import BlokPageImg2 from '../assets/news-5.jpg'
 import BlokPageImg3 from '../assets/news-7.jpg'
 import Footer from '@/components/Footer/Footer'
 import RecentPost from '@/components/RecentPost/RecentPost'
+import { useEffect } from 'react'
+import { getAllBlogs } from '@/Redux/slices/BlogSlice'
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 export default function blog() {
+    const allBlogs = useSelector((store) => store.blog.allBlogs);
+    console.log(allBlogs, 'allBlogs');
+    const [loading, setLoading] = useState(false)
+    const dispatch = useDispatch()
+
+
+    useEffect(() => {
+        dispatch(getAllBlogs(setLoading));
+    }, []);
+
     return (
         <div>
             <Header />
             <AboutBanner pageTitle={"Blog"} />
             <div className={styles.blogPageMainContainer} style={{ paddingTop: '100px' }}>
                 <div className={styles.blogPageLeftSection} >
-                    <BlogPost blogPageTitle={"Export of artistic leather goods"}
-                        blogPageDescription={"Good Look Tailors, a tailor stitch shop that specializes in creating exquisite leather goods. From custom-made jackets  and fine leather footwear, our artistic creations showcase impeccable craftsmanship and attention to detail. In this blog post, we will delve into our journey Explore how our  approach to stitching, customization options, and commitment to exceptional customer service make Good Look Tailors a trusted name in the market[...]"}
-                        blogPageImg={BlokPageImg1}
-                        showBtn={true} />
-                    <BlogPost
-                        blogPageTitle={"Tips to cut & stitching suit jacket"}
-                        blogPageDescription={"Unlock the secrets of cutting and stitching a flawless suit jacket with expert tips from Good Look Tailors. Discover the art of precise measurements, fabric selection, and skilled stitching techniques. Perfect the collar and lapel construction, make necessary adjustments, and achieve a professional finish. Join us on a journey of tailored excellence as we guide you through the process of creating a sophisticated suit jacket[...]"}
-                        blogPageImg={BlokPageImg2}
-                        showBtn={true} />
-                    
-                    <BlogPost
-                        blogPageTitle={"Trending accessories for tailors"}
-                        blogPageDescription={" Discover statement belts, pocket squares, lapel pins, tie bars, cufflinks, suspenders, coordinating tie and pocket square sets, and sleek dress watches. At Good Look Tailors, we embrace these stylish additions to complement our meticulously tailored ensembles, ensuring our clients look and feel their best. Join us as we explore the trending accessories that will elevate your tailoring game to new heights."}
-                        blogPageImg={BlokPageImg3}
-                        showBtn={true} />
-                    
-                    <BlogPost
-                        blogPageTitle={"Safe Drive is Only Achieved by Time Spent"}
-                        blogPageDescription={"At Good Look Tailors, we firmly believe that safe driving is only achieved through the time spent behind the wheel, allowing drivers to develop crucial skills and instincts that contribute to a secure journey. Join us as we explore the importance of building driving skills and the invaluable role experience plays in ensuring road safety. At Good Look Tailors, we advocate for continuous learning and improvement as we recognize that every moment [...]"}
-                        blogPageImg={BlokPageImg1}
-                        showBtn={true} />
+                    {
+                        allBlogs?.length > 0 ? <>
+                            {
+                                allBlogs?.map((item) => {
+                                    return (
+                                        <>
+                                            <BlogPost item={item}
+                                                showBtn={true} />
+                                        </>
+                                    )
+                                })
+                            }
+                        </>
+                            : null
+                    }
+
+
                 </div>
                 <div className={styles.blogPageRighttSection}>
                     <RecentPost />
