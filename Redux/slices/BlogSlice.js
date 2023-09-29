@@ -18,6 +18,22 @@ export const getAllBlogs = createAsyncThunk(
         }
     }
 );
+
+export const getBlogById = createAsyncThunk(
+    "blogSlice/getBlogById",
+    async ({setLoading,id}) => {
+        try {
+            setLoading(true);
+            const response = await axios.get(`http://localhost:5002/api/getBlogById/${id}`);
+            return response.data.data;
+        } catch (error) {
+            //   setError(error?.response?.data);
+            console.log(error.message);
+        } finally {
+            setLoading(false);
+        }
+    }
+);
 export const addComent = createAsyncThunk(
     "blogSlice/addComent",
     async ({ data, setCommentLoading, name }) => {
@@ -72,10 +88,14 @@ const blogSlice = createSlice({
     initialState: {
         allBlogs: [],
         allComments: [],
+        blog:{}
     },
     extraReducers: (builder) => {
         builder.addCase(getAllBlogs.fulfilled, (state, action) => {
             state.allBlogs = action.payload;
+        });
+        builder.addCase(getBlogById.fulfilled, (state, action) => {
+            state.blog = action.payload;
         });
         // builder.addCase(addComent.fulfilled, (state, action) => {
         //     state.allBlogs.blogComment = [

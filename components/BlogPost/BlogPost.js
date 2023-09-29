@@ -11,7 +11,7 @@ export default function BlogPost({ item, showBtn }) {
                 <p className={styles.blogPostDescription}> {item?.description}</p>
                 {/* <p className={styles.blogPostDescription}> {blogPageDescription2}</p> */}
                 {showBtn &&
-                    <Link className={styles.heading} href={`/blog/${item?._id}`}>  <div className={styles.blogPostReadMoreBtnContainer}><p className={styles.blogPostReadMoreBtn}>Read More</p></div></Link>
+                    <Link className={styles.heading} href={`/blogDetails/${item?._id}`}>  <div className={styles.blogPostReadMoreBtnContainer}><p className={styles.blogPostReadMoreBtn}>Read More</p></div></Link>
                 }
             </div>
         </div>
