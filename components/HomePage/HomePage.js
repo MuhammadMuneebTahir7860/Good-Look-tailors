@@ -33,7 +33,7 @@ import stich26 from "../../assets/news-3-292x229.jpg";
 import Link from 'next/link';
 
 
-export default function Home() {
+export default function Home({ tailors, portfolio }) {
 
   var settings = {
     dots: true,
@@ -220,22 +220,40 @@ export default function Home() {
         </div>
       </div>
       <div id='testimonialsSection'>
-      <Testimonials />
+        <Testimonials />
       </div>
       {/* Gallery */}
+      <div className={styles.galleryImageContainer}>
 
+        {
+          portfolio?.length > 0 ? <>
 
-      <div id='gallerSection' className={styles.galleryImageContainer}>
-        <Image className={styles.galleryImage} style={{ width: "100%", }} src={stich17} alt='stich17'></Image>
-        <Image className={styles.galleryImage} style={{ width: "100%", }} src={stich18} alt='stich18'></Image>
+            {
+              portfolio?.map((item) => {
+                return (
+                  <>
+                    < >
+
+                      <img className={styles.galleryImage} src={item} alt='stich17' />
+                    </>
+                  </>
+                )
+              })
+            }
+          </>
+            :
+            null
+        }
+
       </div>
 
-      <div className={styles.galleryImageContainer}>
+
+      {/* <div className={styles.galleryImageContainer}>
         <Image className={styles.galleryImage} style={{ width: "100%" }} src={stich19} alt='stich19'></Image>
         <Image className={styles.galleryImage} style={{ width: "100%" }} src={stich20} alt='stich20'></Image>
-      </div>
+      </div> */}
 
-      <Tailors />
+      <Tailors data={tailors} />
 
       <Contact />
       {/* latest Blogs */}

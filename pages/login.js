@@ -1,27 +1,35 @@
 import React, { useState } from 'react';
 import styles from '@/styles/login.module.scss'
 import Link from 'next/link';
+import { doLogin } from '@/Redux/slices/AuthSlice';
+import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
 export default function login() {
-
-
-    const [fullName, setFullName] = useState('');
+    const dispatch = useDispatch()
+    const router = useRouter();
     const [email, setEmail] = useState('');
+    const [loading, setLoading] = useState(false);
     const [password, setPassword] = useState('');
 
-    const handleSignUp = (e) => {
-        e.preventDefault();
-        // Perform sign-up logic here (e.g., API call to register user)
-
-        // Reset form fields
-
+    const handleLogin = (e) => {
+        // e.preventDefault();
+        const data = {
+            email,
+            password: password,
+        };
+        dispatch(doLogin({ data, setLoading, router }));
+        router.push("/")
         setEmail('');
         setPassword('');
     };
+
+
+
     return (
         <div className={styles.signUpContainer}>
             <div className={styles.container}>
                 <h2>Login</h2>
-                <form onSubmit={handleSignUp}>
+                <form onSubmit={handleLogin}>
 
 
                     <label htmlFor="email">Email:</label>
@@ -44,11 +52,15 @@ export default function login() {
                         required
                     />
 
-                    <button type="submit">Login</button>
+                    <button type="submit" >
+                        <Link href="/">
+                        Login
+                        </Link>
+                        </button>
                     <p>If you don't have account
-                        
-                           <Link className={styles.heading} href="/signUp">Sign Up</Link>
-                        
+
+                        <Link className={styles.heading} href="/signUp">Sign Up</Link>
+
                     </p>
 
                 </form>
