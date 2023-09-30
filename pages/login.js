@@ -12,13 +12,13 @@ export default function login() {
     const [password, setPassword] = useState('');
 
     const handleLogin = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         const data = {
             email,
             password: password,
         };
         dispatch(doLogin({ data, setLoading, router }));
-        router.push("/")
+        // router.push("/")
         setEmail('');
         setPassword('');
     };
