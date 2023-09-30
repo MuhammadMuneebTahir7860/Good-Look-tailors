@@ -28,6 +28,22 @@ export const getPortFolioImages = createAsyncThunk(
     }
 );
 
+export const createAppointment = createAsyncThunk(
+    "homeSlice/createAppointment",
+    async (data) => {
+        try {
+            const response = await axios.post(`http://localhost:5002/api/addAppointment`, data);
+            console.log(response, 'response');
+            return response.data.data;
+
+        } catch (error) {
+            //   setError(error?.response?.data);
+            console.log(error.message);
+        } finally {
+        }
+    }
+);
+
 const homeSlice = createSlice({
     name: "home",
     initialState: {
