@@ -3,17 +3,27 @@ import styles from '@/styles/bookAnAppointment.module.scss'
 import Header from '@/components/Header/Header'
 import AboutBanner from '@/components/AboutBanner/AboutBanner'
 import Footer from '@/components/Footer/Footer';
+import { useDispatch } from 'react-redux';
+import { createAppointment } from '@/Redux/slices/homeSlice';
+import { useRouter } from 'next/router';
+
 export default function bookAnAppointment() {
+    const router = useRouter()
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [service, setService] = useState('');
-
+    const dispatch = useDispatch()
     const handleSubmit = (e) => {
         e.preventDefault();
         // Perform your desired action with the submitted data (e.g., send it to a server, display a success message, etc.)
-        console.log('Submitted data:', { name, email, date, time, service });
+        let data = {
+            name, email, date, time, service
+        }
+        dispatch(createAppointment(data))
+        router.push("/")
+
         // Reset the form inputs
         setName('');
         setEmail('');
@@ -56,8 +66,8 @@ export default function bookAnAppointment() {
                             Date:
                         </label>
                         <input
-                        
-                        className={styles.bookAnAppointmentDateInput}
+
+                            className={styles.bookAnAppointmentDateInput}
                             style={{ height: "40px" }}
                             type="date"
                             value={date}
@@ -69,7 +79,7 @@ export default function bookAnAppointment() {
                             Time:
                         </label>
                         <input
-                        className={styles.bookAnAppointmentTimeInput}
+                            className={styles.bookAnAppointmentTimeInput}
                             style={{ height: "40px" }}
                             type="time"
                             value={time}
@@ -85,7 +95,7 @@ export default function bookAnAppointment() {
                             style={{ height: "40px" }}
                             value={service}
                             onChange={(e) => setService(e.target.value)}
-                            
+
                         >
                             <option value="">Select a service</option>
                             <option value="Alterations">Alterations</option>
